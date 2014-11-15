@@ -28,27 +28,31 @@ describe LinkedList do
         @list.push(@test2)
       end
       it { @list.last.val.should eq(@test2) }
+      it { @list.first.next.val.should eq(@test2) }
     end
 
     describe "the next node value changes" do
       before do
         @list.push(@test2)
+        @list.push(@test3)
       end
       it { @list.first.next.val.should eq(@test2) }
+      it { @list.first.next.next.val.should eq(@test3) }
+      it { @list.last.val.should eq(@test3) }
     end
   end
 
-  context "pop function" do
+  context "shift function" do
     before do
       @list.push(@test1)
       @list.push(@test2)
       @list.push(@test3)
     end
-    describe "first pop" do
+    describe "first item" do
       before do
-        @popped = @list.pop
+        @removed = @list.shift
       end
-      it { @popped.val.should eq(@test1)}
+      it { @removed.should eq(@test1)}
       it { @list.first.val.should eq(@test2)}
     end
   end

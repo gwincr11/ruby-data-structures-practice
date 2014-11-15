@@ -18,10 +18,10 @@ class LinkedList
     @count += 1
   end
 
-  def pop
+  def shift
     pop_el = @first
     @first = pop_el.next
-    pop_el
+    pop_el.val
   end
 
   class Node
@@ -33,7 +33,6 @@ class LinkedList
       @prev = prev_node
       @val = val
     end
-
 
   end
 
