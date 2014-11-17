@@ -7,23 +7,6 @@ class LinkedList
     @count = 0
   end
 
-  def push(el)
-    node = Node.new(el)
-    if @first == nil
-      @first = node
-    end
-
-    @last.next = node unless @last == nil
-    @last = node
-    @count += 1
-  end
-
-  def shift
-    pop_el = @first
-    @first = pop_el.next
-    pop_el.val
-  end
-
   class Node
     attr_accessor :next, :prev
     attr_reader :val
