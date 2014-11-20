@@ -29,10 +29,26 @@ class LinkedList
     return el
   end
 
+  def swap(el1, el2)
+    temp = el1.val
+    el1.val = el2.val
+    el2.val = temp
+  end
+
+  def bubble_sort
+    iteration_count = @count
+    el = @first
+    while(iteration_count > 0) do
+      if el.val > el.next.val
+        swap(el, el.next)
+      end
+      iteration_count -= 1
+    end
+  end
+
 
   class Node
-    attr_accessor :next, :prev
-    attr_reader :val
+    attr_accessor :next, :prev, :val
 
     def initialize(val, next_node = nil, prev_node = nil)
       @next = next_node

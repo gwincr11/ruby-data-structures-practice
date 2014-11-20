@@ -15,5 +15,18 @@ describe LinkedList do
   it { @list.should_not eq(nil) }
   it { @list.count.should eq(0) }
 
+  describe "#swap" do
+    before do
+      @list = Stack.new
+      @list.push(@test1)
+      @list.push(@test2)
+      @list.push(@test3)
+
+      @list.swap(@list.first, @list.first.next)
+    end
+    it { @list.first.val.should eq(@test2)}
+    it { @list.first.next.val.should eq(@test1)}
+  end
+
 
 end
