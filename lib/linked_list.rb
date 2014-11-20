@@ -38,11 +38,13 @@ class LinkedList
   def bubble_sort
     iteration_count = @count
     el = @first
-    while(iteration_count > 0) do
+    sort_executed = true
+    while(sort_executed) do
+      sort_executed = false
       if el.val > el.next.val
         swap(el, el.next)
+        sort_executed = true
       end
-      iteration_count -= 1
     end
   end
 
