@@ -28,5 +28,16 @@ describe LinkedList do
     it { @list.first.next.val.should eq(@test1)}
   end
 
+  describe "to array" do
+     before do
+      @list = Stack.new
+      @list.push(@test1)
+      @list.push(@test2)
+      @list.push(@test3)
+
+      @array_rep = @list.to_a
+    end
+    it { @array_rep.should =~ [@test1, @test2, @test3] }
+  end
 
 end

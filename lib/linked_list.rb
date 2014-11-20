@@ -35,13 +35,22 @@ class LinkedList
     el2.val = temp
   end
 
+  def to_a
+    el = @first
+    array_rep = [@first.val]
+    while(el.next) do
+      array_rep << el.next.val
+      el = el.next
+    end
+    array_rep
+  end
+
   def bubble_sort
     iteration_count = @count
     sort_executed = true
     while(sort_executed) do
       sort_executed = false
       el = @first
-      puts iteration_count
       (1..iteration_count ).each do
         if el.val && el.next && el.val > el.next.val
           swap(el, el.next)
