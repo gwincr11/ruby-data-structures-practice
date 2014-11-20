@@ -11,4 +11,8 @@ class Stack < LinkedList
     @count += 1
   end
 
+  def pop
+    remove_node(@last)
+  end
+
 end

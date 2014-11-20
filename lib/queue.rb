@@ -11,5 +11,9 @@ class Queue < LinkedList
     @count += 1
   end
 
+  def dequeue
+    remove_node(@first)
+  end
+
 
 end

@@ -42,7 +42,21 @@ describe Stack do
     end
   end
 
-  context "remove item #pop" do
+  context "remove item #pop removes the last added item" do
+    before do
+      @list.push(@test1)
+      @list.push(@test2)
+      @list.push(@test3)
+    end
+
+    describe "the last added items is removed lifo" do
+      before do
+        @el = @list.pop
+      end
+      it { @el.should eq(@test3) }
+      it { @list.count.should eq(2) }
+      it { @list.last.val.should eq(@test2) }
+    end
 
   end
 
