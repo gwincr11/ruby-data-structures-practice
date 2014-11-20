@@ -29,7 +29,7 @@ describe "Linked list sorts" do
       @sorted = @array.sort
       @list.merge_sort
     end
-    it { @list.to_a.should == @sorted }
+    it { @list.merge_sort.to_a.should == @sorted }
 
   end
 end
