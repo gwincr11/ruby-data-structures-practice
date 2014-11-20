@@ -58,6 +58,20 @@ describe Stack do
       it { @list.last.val.should eq(@test2) }
     end
 
+    describe "remove all items" do
+      before do
+        @el = @list.pop
+        @el2 = @list.pop
+        @el3 = @list.pop
+      end
+      it { @el.should eq(@test3) }
+      it { @el2.should eq(@test2) }
+      it { @el3.should eq(@test1) }
+      it { @list.count.should eq(0) }
+      it { @list.last.should eq(nil) }
+      it { @list.first.should eq(nil) }
+    end
+
   end
 
 end

@@ -1,5 +1,6 @@
 class LinkedList
   attr_reader :first, :last, :count
+  include Enumerable
 
   def initialize
     @first = nil
@@ -19,13 +20,15 @@ class LinkedList
     if node == @last
       el = @last.val
       @last = @first
-      (1..@count-1).each do |n|
-        @last = @first.next
+      (1..@count-2).each do |n|
+        @last = @last.next
       end
+      @last.next = nil
     end
     @count -= 1
     return el
   end
+
 
   class Node
     attr_accessor :next, :prev
