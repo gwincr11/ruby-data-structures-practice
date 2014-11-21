@@ -38,9 +38,8 @@ class LinkedList
   def to_a
     el = @first
     array_rep = [@first.val]
-    while(el.next) do
+    self.each do |el|
       array_rep << el.next.val
-      el = el.next
     end
     array_rep
   end
