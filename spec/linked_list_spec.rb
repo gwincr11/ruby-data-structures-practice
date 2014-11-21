@@ -40,4 +40,21 @@ describe LinkedList do
     it { @array_rep.should =~ [@test1, @test2, @test3] }
   end
 
+  describe "enumerable" do
+    before do
+      @list = Stack.new
+      @list.push(@test1)
+      @list.push(@test2)
+      @list.push(@test3)
+      @array_rep = @list.to_a
+    end
+
+    it "should iterate" do
+      @list.each_with_index do | item, i |
+        item.val.should eq(@array_rep[i])
+      end
+    end
+
+  end
+
 end

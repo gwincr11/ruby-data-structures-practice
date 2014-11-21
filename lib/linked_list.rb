@@ -45,6 +45,19 @@ class LinkedList
     array_rep
   end
 
+  def each &block
+    el = @first
+
+    (1..@count).each do
+      if block_given?
+        block.call el
+      else
+        yield el
+      end
+      el = el.next
+    end
+  end
+
   def bubble_sort
     iteration_count = @count
     sort_executed = true
