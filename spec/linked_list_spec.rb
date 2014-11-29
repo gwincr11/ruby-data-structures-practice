@@ -57,4 +57,15 @@ describe LinkedList do
 
   end
 
+  describe "comparable" do
+    before do
+      @list = Stack.new
+      @test1 = 1
+      @test2 = 2
+      @list.push(@test1)
+      @list.push(@test2)
+    end
+    it { @list.first.should be < @list.last}
+  end
+
 end
