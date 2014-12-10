@@ -30,4 +30,14 @@ module ArraySorts
       sorted
   end
 
+  def self.quick_sort(myarray)
+    return [] if !myarray
+    return myarray if myarray.length <= 1
+
+    pivot = myarray.sample
+    pt = myarray.group_by {|x| x <=> pivot}
+
+    return quick_sort(pt[-1]) + pt[0] + quick_sort(pt[1])
+  end
+
 end
